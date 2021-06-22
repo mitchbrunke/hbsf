@@ -108,10 +108,12 @@
 
   .nav_list ul {
     max-width: 800px;
+    padding-top: 2rem;
   }
 
   .nav button {
     margin-top: 1rem;
     padding: 1.5rem 2rem;
+    margin-top: 3rem;
   }
 }

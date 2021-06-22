@@ -69,8 +69,8 @@ button:hover {
 }
 
 hr {
-  background-image: url(../public/line-light-grey-1.svg);
-  height: 5vh;
+  background-image: url(../public/line-light-grey-2.svg);
+  height: 12vh;
   background-size: auto;
   background-color: none;
   background-position: center center;
@@ -78,4 +78,10 @@ hr {
   width: 100%;
   border: 0;
   margin: 0;
+}
+
+@media only screen and (min-width: 1000px) {
+  hr {
+    height: 10vh;
+  }
 }

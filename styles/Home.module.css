@@ -135,9 +135,6 @@
 
   .hero h1 {
     font-size: 3.1rem;
-  }
-
-  .hero h1 {
     max-width: 95vw;
   }
 
@@ -170,6 +167,10 @@
     justify-content: space-evenly;
     width: 85vw;
     margin: 0 auto;
+  }
+
+  .hero {
+    max-height: 60vh;
   }
 
   .details_container {
@@ -212,6 +213,11 @@
     height: 20vh;
     margin: 1rem auto;
     width: 65vw;
+    padding-top: 5rem;
+  }
+
+  .entertainment {
+    padding-bottom: 5rem;
   }
 
   .entertainer {
