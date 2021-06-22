@@ -1,16 +1,81 @@
-html,
-body {
-  padding: 0;
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@300;400;700&display=swap");
+
+* {
+  font-size: 16px;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+}
+
+body {
+  color: #666;
+  font-family: "Open Sans", sans-serif;
+}
+
+ul {
+  list-style: none;
 }
 
 a {
-  color: inherit;
+  color: #999;
   text-decoration: none;
+  font-size: 0.8rem;
+  cursor: pointer;
 }
 
-* {
-  box-sizing: border-box;
+a:hover {
+  color: #0d2346;
+}
+
+h1 {
+  color: white;
+  font-size: 3.1rem;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: #ff3b00;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h3 {
+  color: #111;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+button {
+  border: none;
+  background: #ff3b00;
+  padding: 25px 35px 25px 37px;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #091830;
+}
+
+hr {
+  background-image: url(../public/line-light-grey-1.svg);
+  height: 5vh;
+  background-size: auto;
+  background-color: none;
+  background-position: center center;
+  background-repeat: repeat-x;
+  width: 100%;
+  border: 0;
+  margin: 0;
 }

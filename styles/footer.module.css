@@ -1,0 +1,92 @@
+.sponsors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 3rem;
+  max-width: 75vw;
+  padding-top: 1rem;
+  margin-bottom: -1.5rem;
+}
+
+.sponsors img {
+  padding: 1rem 0;
+  width: 55vw;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.btm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.btm p {
+  font-size: 0.7rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .sponsors {
+    display: flex;
+    flex-direction: row;
+  }
+  .sponsors img {
+    width: 40vw;
+    height: auto;
+  }
+
+  #fcrc {
+    padding: 3vh 0;
+    width: 40vw;
+    height: 5vh;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .sponsors {
+    justify-content: center;
+    align-items: center;
+  }
+  .sponsors img {
+    max-width: 200px;
+    height: auto;
+  }
+
+  #fcrc {
+    padding: 3vh 0;
+    max-width: 200px;
+    max-height: 4vh;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .sponsors {
+    padding-left: 6.5rem;
+    height: 25vh;
+  }
+
+  #support {
+    padding-top: 3rem;
+    margin-bottom: -2rem;
+  }
+
+  .logo {
+    padding: 2rem 0;
+  }
+
+  .sponsors img {
+    max-width: 250px;
+    height: auto;
+  }
+
+  #fcrc {
+    padding: 3vh 0 3vh 3rem;
+    max-width: 200px;
+    max-height: 8vh;
+  }
+}
