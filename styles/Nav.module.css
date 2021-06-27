@@ -1,3 +1,35 @@
+.top {
+  height: 5vh;
+  width: 100%;
+  position: relative;
+}
+
+.top ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.top li {
+  font-size: 0.875rem;
+  padding: 0 0.5rem;
+}
+
+.top::after {
+  content: "";
+  background-image: url(../public/line-light-grey-1.svg);
+  background-repeat: repeat-x;
+  background-position: center bottom;
+  width: 100%;
+  background-size: cover;
+  height: 3.5vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 .nav {
   width: 100%;
   background-image: url(/white-wobble.png);
@@ -20,6 +52,10 @@
   text-transform: uppercase;
   font-weight: 700;
   margin-top: 2.2rem;
+}
+
+.nav button:hover {
+  background-color: #091830;
 }
 
 .navbar {

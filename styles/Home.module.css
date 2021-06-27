@@ -32,8 +32,12 @@
 }
 
 #two button {
-  background-color: #0d2346;
+  background-color: #091830;
   margin-top: 0.5rem;
+}
+
+#two button:hover {
+  background: #ff3b00;
 }
 
 .info {
@@ -170,7 +174,7 @@
   }
 
   .hero {
-    max-height: 60vh;
+    height: 60vh;
   }
 
   .details_container {

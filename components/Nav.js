@@ -6,6 +6,22 @@ const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
   return (
     <div>
+      <div className={styles.top}>
+        <ul>
+          <Link href="https://www.visitfrasercoast.com/">
+            <a>
+              <li> Visit Fraser Coast</li>
+            </a>
+          </Link>
+
+          <Link href="http://www.fcte.com.au/Events/Signature-Events">
+            <a>
+              <li> Stall Holder Info</li>
+            </a>
+          </Link>
+        </ul>
+      </div>
+
       <div className={styles.nav}>
         <div className={styles.navbar}>
           <div className={styles.logo}>
@@ -32,13 +48,7 @@ const Navbar = () => {
                 </a>
               </Link>
 
-              <Link href="https://www.visitfrasercoast.com/">
-                <a>
-                  <li> Visit Fraser Coast</li>
-                </a>
-              </Link>
-
-              <Link href="/content">
+              <Link href="/contact">
                 <a>
                   <li> Contact</li>
                 </a>
@@ -72,12 +82,6 @@ const Navbar = () => {
                 <Link href="/program">
                   <a>
                     <li> Program</li>
-                  </a>
-                </Link>
-
-                <Link href="https://www.visitfrasercoast.com/">
-                  <a>
-                    <li> Visit Fraser Coast</li>
                   </a>
                 </Link>
 
