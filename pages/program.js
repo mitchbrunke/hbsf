@@ -1,10 +1,10 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Program.module.css";
 import Hero from "../components/Hero";
 
 const program = () => {
   return (
-    <div>
+    <div className={styles.program}>
       <Head>
         <title> Program | Hervey Bay Seafood Festival 2021 </title>
         <meta
