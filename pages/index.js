@@ -15,7 +15,7 @@ const pageDataQuery = `*[_type == "home"]{
 
 export default function Home({ pageData }) {
   return (
-    <div>
+    <div className={styles.content}>
       {console.log(pageData)}
       <Head>
         <title>Hervey Bay Seafood Festival 2021</title>

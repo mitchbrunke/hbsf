@@ -132,8 +132,19 @@
     justify-content: space-evenly;
     align-items: center;
     margin-top: 2.2rem;
-
+    font-family: "Merriweather", serif;
     width: 45vw;
+  }
+
+  .nav_list a {
+    color: #111;
+    overflow: hidden;
+    transition: border-width 0.2s linear;
+    border-bottom: 0px solid #ff3b00;
+  }
+
+  .nav_list a:hover {
+    border-bottom: 4px solid #ff3b00;
   }
 }
 
