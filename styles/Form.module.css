@@ -1,0 +1,74 @@
+.form {
+  display: flex;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.form form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  color: #333333;
+}
+
+.form h4 {
+  font-size: 1rem;
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25rem;
+  padding-top: 1rem;
+}
+
+.form label {
+  color: black;
+  font-size: 0.8125rem;
+}
+
+.form input {
+  color: #333333;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid #eeeeee;
+  border-radius: 2px;
+  padding: 0.75rem;
+  outline: none;
+}
+
+.inputName {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 0;
+}
+
+#message {
+  width: 100%;
+  min-height: 10vh;
+  color: #333333;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid #eeeeee;
+}
+
+.nameContainer h4 {
+  padding: 1rem 0;
+}
+
+.form button {
+  margin: 1rem 0 5rem 0;
+}
+
+#success {
+  width: 75vw;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+@media (min-width: 700px) {
+  .form {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .form {
+    max-width: 600px;
+  }
+}

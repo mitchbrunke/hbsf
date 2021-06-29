@@ -1,7 +1,11 @@
+import ContactForm from "../components/Form";
+import Hero from "../components/Hero";
+
 const contact = () => {
   return (
     <div>
-      <h3>Contact</h3>
+      <Hero title="Contact" />
+      <ContactForm />
     </div>
   );
 };
