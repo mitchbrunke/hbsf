@@ -13,10 +13,21 @@ const pageDataQuery = `*[_type == "home"]{
     parking
   }`;
 
-export default function Home({ pageData }) {
+const detailsDataQuery = ` *[_type == "details"]{
+    heading, 
+      description
+    }`;
+
+const entertainmentDataQuery = ` *[_type == "entertainment"]{
+  name, 
+    description,
+    image
+  } `;
+
+export default function Home({ pageData, details, entertainment }) {
   return (
     <div className={styles.content}>
-      {console.log(pageData)}
+      {console.log(entertainment)}
       <Head>
         <title>Hervey Bay Seafood Festival 2021</title>
         <meta
@@ -53,21 +64,14 @@ export default function Home({ pageData }) {
       <hr />
       <div className={styles.details_container}>
         <h2>Festival Details</h2>
+
         <div className={styles.details}>
-          <div className="When">
-            <h3>When & Where</h3>
-            <p>{pageData[0].When[0].children[0].text}</p>
-          </div>
-
-          <div className="admission">
-            <h3>Admission</h3>
-            <p>{pageData[0].admission[0].children[0].text}</p>
-          </div>
-
-          <div className="parking">
-            <h3>Admission</h3>
-            <p>{pageData[0].parking[0].children[0].text}</p>
-          </div>
+          {details.map((detail) => (
+            <div key={detail.heading}>
+              <h3>{detail.heading}</h3>
+              <p>{detail.description[0].children[0].text}</p>
+            </div>
+          ))}
         </div>
 
         <Link href="https://www.eventbrite.com.au/e/hervey-bay-seafood-festival-tickets-157738276431">
@@ -81,15 +85,16 @@ export default function Home({ pageData }) {
         <h2>Festival Entertainment</h2>
         <div className={styles.entertainer}>
           <div className={styles.img}>
-            <img src="/michael-waugh.jpg" alt="" />
+            {console.log(entertainment[0].image)}
+            <img
+              src={urlFor(entertainment[0].image).url()}
+              alt={entertainment[0].name}
+            />
           </div>
           <div className={styles.single_entertainer}>
-            <h3>Coming Soon</h3>
-            <p>
-              The great entertainmnet you have come to know and expect will be
-              returning to the Hervey Bay Seafood Festival in 2021 with the
-              lineup to be announced late June.
-            </p>
+            <h3>{entertainment[0].name}</h3>
+
+            <p>{entertainment[0].description[0].children[0].text}</p>
           </div>
         </div>
       </div>
@@ -103,5 +108,7 @@ export default function Home({ pageData }) {
 
 export async function getStaticProps() {
   const pageData = await sanityClient.fetch(pageDataQuery);
-  return { props: { pageData } };
+  const details = await sanityClient.fetch(detailsDataQuery);
+  const entertainment = await sanityClient.fetch(entertainmentDataQuery);
+  return { props: { pageData, details, entertainment } };
 }
