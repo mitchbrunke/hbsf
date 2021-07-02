@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { sanityClient, urlFor } from "../lib/sanity";
 import Image from "next/image";
+import Entertainer from "../components/Entertainer";
 
 const pageDataQuery = `*[_type == "home"]{
   heading,
@@ -83,21 +84,16 @@ export default function Home({ pageData, details, entertainment }) {
 
       <div className={styles.entertainment}>
         <h2>Festival Entertainment</h2>
-        <div className={styles.entertainer}>
-          <div className={styles.img}>
-            {console.log(entertainment[0].image)}
-            <img
-              src={urlFor(entertainment[0].image).url()}
-              alt={entertainment[0].name}
-            />
-          </div>
-          <div className={styles.single_entertainer}>
-            <h3>{entertainment[0].name}</h3>
 
-            <p>{entertainment[0].description[0].children[0].text}</p>
-          </div>
-        </div>
+        <Entertainer entertainment={entertainment} />
+
+        <Link href="/program">
+          <a>
+            <button>All Entertainment</button>
+          </a>
+        </Link>
       </div>
+
       <div className={styles.vfc}>
         <h1>Keep up to date with Fraser Coast Events</h1>
         <button>Fraser Coast Events</button>

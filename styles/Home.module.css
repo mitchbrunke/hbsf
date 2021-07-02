@@ -79,6 +79,14 @@
   background-color: #f4f4f4;
   padding: 2rem 0;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.entertainment button {
+  margin-top: 2rem;
 }
 
 .entertainment::before {
@@ -188,6 +196,7 @@
   .entertainer {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     margin: 0 auto;
   }
 
@@ -225,15 +234,20 @@
   }
 
   .entertainer {
-    max-width: 1200px;
+    max-width: 1000px;
+  }
+
+  .entertainer h3 {
+    font-size: 2rem;
+    padding: 1.5rem 0;
   }
 
   .single_entertainer {
-    max-width: 600px;
+    max-width: 500px;
   }
 
   .entertainer img {
-    max-width: 600px;
+    max-width: 500px;
   }
 
   .vfc button {

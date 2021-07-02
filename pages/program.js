@@ -1,8 +1,16 @@
 import Head from "next/head";
 import styles from "../styles/Program.module.css";
 import Hero from "../components/Hero";
+import Link from "next/link";
+import { sanityClient, urlFor } from "../lib/sanity";
 
-const program = () => {
+const entertainmentDataQuery = ` *[_type == "entertainment"]{
+  name, 
+    description,
+    image
+  } `;
+
+const program = ({ entertainment }) => {
   return (
     <div className={styles.program}>
       <Head>
@@ -16,9 +24,30 @@ const program = () => {
 
       <Hero title="Program" />
 
+      {entertainment.map((single) => (
+        <div key={single.name} className={styles.single}>
+          <div className="image">
+            {console.log(single)}
+            <img
+              src={urlFor(single.image).width(540).height(300).url()}
+              alt={single.name}
+            />
+          </div>
+          <div className={styles.text}>
+            <h4>{single.name}</h4>
+            <p>{single.description[0].children[0].text}</p>
+          </div>
+        </div>
+      ))}
+
       <h3>The program will be announced soon!</h3>
     </div>
   );
 };
+
+export async function getStaticProps() {
+  const entertainment = await sanityClient.fetch(entertainmentDataQuery);
+  return { props: { entertainment } };
+}
 
 export default program;
