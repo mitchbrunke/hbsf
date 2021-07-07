@@ -113,6 +113,7 @@
 .single_entertainer {
   padding: 2rem 1rem;
   background: white;
+  text-overflow: ellipsis;
 }
 
 .single_entertainer h3 {
