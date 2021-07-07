@@ -39,8 +39,6 @@ const program = ({ entertainment }) => {
           </div>
         </div>
       ))}
-
-      <h3>The program will be announced soon!</h3>
     </div>
   );
 };
