@@ -7,6 +7,9 @@ const Footer = () => {
       <div className={styles.sponsors}>
         <img src="/fcte.png" alt="" />
         <img id={styles.fcrc} src="/fcrc.png" alt="" />
+        <img src="/Your Mates Logo.png" alt="" />
+        <img src="/springvale.jpg" alt="" />
+        <img src="/Wide Bay Sound logo (1).jpg" alt="" />
       </div>
       <hr className={styles.grey_wobble} />
 

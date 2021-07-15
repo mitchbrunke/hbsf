@@ -7,10 +7,15 @@
   padding: 0;
 }
 
+body,
+html {
+  overflow-x: hidden;
+}
+
 body {
   color: #666;
   font-family: "Open Sans", sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
   animation: enter 1s ease-in-out;
 }
 

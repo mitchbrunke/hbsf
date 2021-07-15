@@ -51,6 +51,10 @@
   .sponsors {
     justify-content: center;
     align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    overflow: hidden;
   }
   .sponsors img {
     max-width: 200px;
