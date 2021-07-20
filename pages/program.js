@@ -36,13 +36,13 @@ const program = ({ entertainment, stalls, reverse, noReverse }) => {
 
       <ProgramItem sanityData={entertainment} type={noReverse} />
 
-      {/* <div className={styles.two}>
+      <div className={styles.two}>
         <h3>Signature Seafood Stalls</h3>
 
         <ProgramItem sanityData={stalls} type={reverse} />
       </div>
 
-      <ProgramItem sanityData={entertainment} type={noReverse} /> */}
+      {/* <ProgramItem sanityData={entertainment} type={noReverse} /> */}
     </div>
   );
 };

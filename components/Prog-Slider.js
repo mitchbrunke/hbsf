@@ -9,6 +9,7 @@ import cn from "classnames";
 const ProgramItem = ({ sanityData, type }) => {
   const [pause, setPause] = useState(false);
   const timer = useRef();
+
   const [sliderRef, slider] = useKeenSlider({
     loop: true,
     duration: 1500,
@@ -27,9 +28,6 @@ const ProgramItem = ({ sanityData, type }) => {
     sliderRef.current.addEventListener("mouseout", () => {
       setPause(false);
     });
-  }, [sliderRef]);
-
-  useEffect(() => {
     timer.current = setInterval(() => {
       if (!pause && slider) {
         slider.next();
@@ -38,7 +36,18 @@ const ProgramItem = ({ sanityData, type }) => {
     return () => {
       clearInterval(timer.current);
     };
-  }, [pause, slider]);
+  }, [sliderRef, pause, slider]);
+
+  //   useEffect(() => {
+  //     timer.current = setInterval(() => {
+  //       if (!pause && slider) {
+  //         slider.next();
+  //       }
+  //     }, 3000);
+  //     return () => {
+  //       clearInterval(timer.current);
+  //     };
+  //   }, [pause, slider]);
 
   return (
     <>
@@ -85,5 +94,33 @@ const ProgramItem = ({ sanityData, type }) => {
     </>
   );
 };
+
+function ArrowLeft(props) {
+  const disabeld = props.disabled ? " arrow--disabled" : "";
+  return (
+    <svg
+      onClick={props.onClick}
+      className={"arrow arrow--left" + disabeld}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+    </svg>
+  );
+}
+
+function ArrowRight(props) {
+  const disabeld = props.disabled ? " arrow--disabled" : "";
+  return (
+    <svg
+      onClick={props.onClick}
+      className={"arrow arrow--right" + disabeld}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+    </svg>
+  );
+}
 
 export default ProgramItem;
