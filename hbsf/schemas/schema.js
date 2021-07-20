@@ -6,6 +6,8 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import home from "../schemas/home";
 import details from "./details";
 import entertainment from "./entertainment";
+import stalls from "./stalls";
+import bar from "./bar";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -18,5 +20,7 @@ export default createSchema({
     home,
     details,
     entertainment,
+    stalls,
+    bar,
   ]),
 });

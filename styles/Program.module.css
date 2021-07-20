@@ -48,7 +48,8 @@
     max-width: 35vw;
   }
 
-  .single {
+  .single,
+  .singleReverse {
     flex-direction: row;
     max-width: 50rem;
     margin: 2rem auto;
@@ -101,4 +102,9 @@
   .single :nth-child(even) {
     margin: 3rem auto;
   }
+}
+
+.two {
+  background-color: #f1f1f1;
+  padding-top: 2rem;
 }

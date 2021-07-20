@@ -1,10 +1,12 @@
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import styles from "../styles/Home.module.css";
+import Link from "next/link";
 import { sanityClient, urlFor } from "../lib/sanity";
 import { useEffect, useState, useRef } from "react";
+import styles from "../styles/Program.module.css";
+import cn from "classnames";
 
-const Entertainer = ({ entertainment }) => {
+const ProgramItem = ({ sanityData, type }) => {
   const [pause, setPause] = useState(false);
   const timer = useRef();
   const [sliderRef, slider] = useKeenSlider({
@@ -41,22 +43,40 @@ const Entertainer = ({ entertainment }) => {
   return (
     <>
       <div ref={sliderRef} className="keen-slider">
-        {entertainment.map((single) => (
+        {sanityData.map((single) => (
           <div
             key={single.name}
-            className="keen-slider__slide {(entertainment.indexOf(single) + `1`).slice(1)}"
+            className="keen-slider__slide {(sanityData.indexOf(single) + `1`).slice(1)}"
           >
-            <div className={styles.entertainer}>
+            <div
+              //   className={cn({
+              //     [styles.single]: type === "noReverse",
+              //     [styles.singleReverse]: type === "Reverse",
+              //   })}
+              className={styles.single}
+            >
               <div className={styles.img}>
                 <img
                   src={urlFor(single.image).width(500).height(300).url()}
                   alt={single.name}
                 />
               </div>
-              <div className={styles.single_entertainer}>
+              <div className={styles.text}>
                 <h3>{single.name}</h3>
 
                 <p>{single.description[0].children[0].text}</p>
+
+                {single.link ? (
+                  <>
+                    <Link href={single.link}>
+                      <a target="_blank">
+                        <button>More Info</button>
+                      </a>
+                    </Link>
+                  </>
+                ) : (
+                  ""
+                )}
               </div>
             </div>
           </div>
@@ -66,4 +86,4 @@ const Entertainer = ({ entertainment }) => {
   );
 };
 
-export default Entertainer;
+export default ProgramItem;

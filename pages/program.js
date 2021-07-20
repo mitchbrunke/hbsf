@@ -3,6 +3,7 @@ import styles from "../styles/Program.module.css";
 import Hero from "../components/Hero";
 import Link from "next/link";
 import { sanityClient, urlFor } from "../lib/sanity";
+import ProgramItem from "../components/Prog-Slider";
 
 const entertainmentDataQuery = ` *[_type == "entertainment"]{
   name, 
@@ -10,11 +11,18 @@ const entertainmentDataQuery = ` *[_type == "entertainment"]{
     image
   } `;
 
-const program = ({ entertainment }) => {
+const stallDataQuery = ` *[_type == "stalls"]{
+    name, 
+      description,
+      image,
+      link
+    } `;
+
+const program = ({ entertainment, stalls, reverse, noReverse }) => {
   return (
     <div className={styles.program}>
       <Head>
-        <title> Program | Hervey Bay Seafood Festival 2021 </title>
+        <title> Plan your day | Hervey Bay Seafood Festival 2021 </title>
         <meta
           name="description"
           content="Enjoy local seafood, regional wines, beers and fabulous music at Seafront Oval
@@ -22,30 +30,27 @@ const program = ({ entertainment }) => {
         />
       </Head>
 
-      <Hero title="Program" />
+      <Hero title="Plan your day" />
 
-      {entertainment.map((single) => (
-        <div key={single.name} className={styles.single}>
-          <div className="image">
-            {console.log(single)}
-            <img
-              src={urlFor(single.image).width(540).height(300).url()}
-              alt={single.name}
-            />
-          </div>
-          <div className={styles.text}>
-            <h4>{single.name}</h4>
-            <p>{single.description[0].children[0].text}</p>
-          </div>
-        </div>
-      ))}
+      <h3>Entertainment</h3>
+
+      <ProgramItem sanityData={entertainment} type={noReverse} />
+
+      {/* <div className={styles.two}>
+        <h3>Signature Seafood Stalls</h3>
+
+        <ProgramItem sanityData={stalls} type={reverse} />
+      </div>
+
+      <ProgramItem sanityData={entertainment} type={noReverse} /> */}
     </div>
   );
 };
 
 export async function getStaticProps() {
   const entertainment = await sanityClient.fetch(entertainmentDataQuery);
-  return { props: { entertainment } };
+  const stalls = await sanityClient.fetch(stallDataQuery);
+  return { props: { entertainment, stalls } };
 }
 
 export default program;
