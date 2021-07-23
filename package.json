@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@sanity/cli": "^2.12.2",
+    "@types/gtag.js": "0.0.7",
     "eslint": "7.28.0",
     "eslint-config-next": "11.0.0"
   }

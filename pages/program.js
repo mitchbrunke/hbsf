@@ -18,7 +18,14 @@ const stallDataQuery = ` *[_type == "stalls"]{
       link
     } `;
 
-const program = ({ entertainment, stalls, reverse, noReverse }) => {
+const barDataQuery = ` *[_type == "bar"]{
+      name, 
+        description,
+        image,
+        link
+      } `;
+
+const program = ({ entertainment, stalls, bars, reverse, noReverse }) => {
   return (
     <div className={styles.program}>
       <Head>
@@ -42,6 +49,10 @@ const program = ({ entertainment, stalls, reverse, noReverse }) => {
         <ProgramItem sanityData={stalls} type={reverse} />
       </div>
 
+      <h3 className={styles.titles}>Signature Seafood Festival Bars</h3>
+
+      <ProgramItem sanityData={bars} type={reverse} />
+
       {/* <ProgramItem sanityData={entertainment} type={noReverse} /> */}
     </div>
   );
@@ -50,7 +61,8 @@ const program = ({ entertainment, stalls, reverse, noReverse }) => {
 export async function getStaticProps() {
   const entertainment = await sanityClient.fetch(entertainmentDataQuery);
   const stalls = await sanityClient.fetch(stallDataQuery);
-  return { props: { entertainment, stalls } };
+  const bars = await sanityClient.fetch(barDataQuery);
+  return { props: { entertainment, stalls, bars } };
 }
 
 export default program;
