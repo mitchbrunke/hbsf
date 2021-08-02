@@ -50,17 +50,24 @@ export default function Home({ pageData, details, entertainment }) {
             </Link>
           </div>
 
-          <div className={styles.btn} id={styles.two}>
+          {/* <div className={styles.btn} id={styles.two}>
             <Link href="https://www.eventbrite.com.au/e/hervey-bay-seafood-festival-tickets-157738276431">
               <a target="_blank">
                 <button> Buy Tickets</button>
               </a>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className={styles.info}>
-        <h3>{pageData[0].description[0].children[0].text}</h3>
+        {/* <h3>{pageData[0].description[0].children[0].text}</h3> */}
+        <h3>
+          Hervey Bay’s whale festival has been rescheduled to run in September
+          this year when it is safe to do so and the current COVID crisis
+          impacting Brisbane and the 11 local government areas in the
+          South-East, including our close neighbours the Sunshine Coast has
+          subsided.
+        </h3>
       </div>
       <hr />
       <div className={styles.details_container}>

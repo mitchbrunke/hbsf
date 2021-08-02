@@ -59,7 +59,7 @@ const Navbar = () => {
           <div className={styles.btn}>
             <Link href="https://www.eventbrite.com.au/e/hervey-bay-seafood-festival-tickets-157738276431">
               <a target="_blank">
-                <button> Buy Tickets</button>
+                <button>Tickets</button>
               </a>
             </Link>
           </div>
