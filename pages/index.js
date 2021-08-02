@@ -66,7 +66,9 @@ export default function Home({ pageData, details, entertainment }) {
           this year when it is safe to do so and the current COVID crisis
           impacting Brisbane and the 11 local government areas in the
           South-East, including our close neighbours the Sunshine Coast has
-          subsided.
+          subsided. Please note the event is postponed not cancelled, tickets
+          will carry over to the event when it is scheduled.If you require a
+          refund please contact tickets@fcte.com.au with your booking number.
         </h3>
       </div>
       <hr />
