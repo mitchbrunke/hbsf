@@ -60,21 +60,6 @@ export default function Home({ pageData, details, entertainment }) {
         </div>
       </div>
 
-      <div className={styles.alert}>
-        <h3>
-          Hervey Bay’s whale festival has been rescheduled to run in September
-          this year when it is safe to do so and the current COVID crisis
-          impacting Brisbane and the 11 local government areas in the
-          South-East, including our close neighbours the Sunshine Coast has
-          subsided.
-        </h3>
-        <p>
-          Please note the event is postponed not cancelled, tickets will carry
-          over to the event when it is scheduled.If you require a refund please
-          contact tickets@fcte.com.au with your booking number.
-        </p>
-      </div>
-
       <div className={styles.info}>
         <p></p>
         <h3>{pageData[0].description[0].children[0].text}</h3>
