@@ -51,7 +51,7 @@
   .sponsors {
     justify-content: center;
     align-items: center;
-    max-width: 1000px;
+    max-width: 85vw;
     margin: 0 auto;
     flex-wrap: wrap;
     overflow: hidden;
@@ -71,7 +71,7 @@
 @media only screen and (min-width: 1300px) {
   .sponsors {
     padding-left: 6.5rem;
-    height: 25vh;
+    height: 30vh;
   }
 
   #support {
