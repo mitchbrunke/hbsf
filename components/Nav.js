@@ -63,6 +63,13 @@ const Navbar = () => {
               </a>
             </Link>
           </div>
+          <div id={styles.teq}>
+            <img
+              id={styles.teq_logo}
+              src="/Its-Live-in-Queensland.png"
+              alt=""
+            />
+          </div>
         </div>
         <div className={styles.mobile} onClick={(e) => setNavOpen(!navOpen)}>
           <img src="/menu.svg" alt="" />

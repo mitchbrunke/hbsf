@@ -71,6 +71,10 @@
   margin: 1rem;
 }
 
+#teq {
+  display: none;
+}
+
 .container {
   background: white;
   width: 75vw;
@@ -154,6 +158,20 @@
     max-width: 1300px;
   }
 
+  #teq {
+    display: inline;
+    max-width: 20vw;
+
+    height: auto;
+    margin-top: 1rem;
+    margin-left: 3rem;
+  }
+
+  #teq_logo {
+    max-width: 100%;
+    height: auto;
+  }
+
   .nav_list ul {
     max-width: 800px;
     padding-top: 1rem;
@@ -163,5 +181,17 @@
     margin-top: 1rem;
     padding: 1.5rem 2rem;
     margin-top: 3rem;
+  }
+
+  #teq {
+    max-width: 20vw;
+    max-height: 15vh;
+    padding-top: 2rem;
+    margin-left: 3rem;
+  }
+
+  #teq_logo {
+    max-width: 100%;
+    height: auto;
   }
 }
