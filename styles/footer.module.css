@@ -54,11 +54,16 @@
     max-width: 85vw;
     margin: 0 auto;
     flex-wrap: wrap;
+    flex-basis: 80%;
     overflow: hidden;
   }
   .sponsors img {
     max-width: 200px;
     height: auto;
+  }
+
+  .btm {
+    padding-bottom: 1rem;
   }
 
   #fcrc {
@@ -84,7 +89,7 @@
   }
 
   .sponsors img {
-    max-width: 250px;
+    max-width: 200px;
     height: auto;
   }
 
@@ -93,4 +98,6 @@
     max-width: 200px;
     max-height: 8vh;
   }
+
+
 }

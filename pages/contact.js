@@ -10,9 +10,10 @@ const contact = () => {
         <p>
           {" "}
           For any enquires contact the Hervey Bay Visitor Information centre on
-          <strong>1800 811 728</strong>.
+          <strong> 1800 811 728</strong>.
         </p>
       </div>
+      <h3 id={styles.contact}>Contact Us</h3>
       <ContactForm />
     </div>
   );

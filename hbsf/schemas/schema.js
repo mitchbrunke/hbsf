@@ -8,6 +8,7 @@ import details from "./details";
 import entertainment from "./entertainment";
 import stalls from "./stalls";
 import bar from "./bar";
+import tickets from "./tickets";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -22,5 +23,6 @@ export default createSchema({
     entertainment,
     stalls,
     bar,
+    tickets,
   ]),
 });

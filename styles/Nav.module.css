@@ -2,6 +2,7 @@
   height: 5vh;
   width: 100%;
   position: relative;
+  
 }
 
 .top ul {
@@ -183,15 +184,26 @@
     margin-top: 3rem;
   }
 
-  #teq {
-    max-width: 20vw;
-    max-height: 15vh;
-    padding-top: 2rem;
-    margin-left: 3rem;
-  }
+  
 
   #teq_logo {
     max-width: 100%;
     height: auto;
   }
+}
+
+
+@media only screen and (min-width: 1400px) {
+  #teq {
+    max-width: 10vw;
+    max-height: 15vh;
+    
+  }
+
+  .top ul {
+    
+    margin-left: -5rem;
+  }
+
+
 }

@@ -14,14 +14,13 @@ const ContactForm = () => {
     <div className={styles.form}>
       <form onSubmit={handleSubmit}>
         <div className={styles.nameContainer}>
-          <h4>Name</h4>
           <div className={styles.inputName}>
-            <label htmlFor="name">First</label>
+            <label htmlFor="name">First Name</label>
             <input id={styles.name} type="text" name="First Name" />
           </div>
 
           <div className={styles.inputName}>
-            <label htmlFor="name">Last</label>
+            <label htmlFor="name">Last Name</label>
             <input id={styles.name} type="text" name="Last Name" />
           </div>
         </div>

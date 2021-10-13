@@ -36,7 +36,7 @@
 .inputName {
   display: flex;
   flex-direction: column-reverse;
-  margin: 0;
+  margin: 1rem 0;
 }
 
 #message {
@@ -68,7 +68,22 @@
 }
 
 @media (min-width: 1000px) {
+  
   .form {
-    max-width: 600px;
+    max-width: 60vw;
   }
+
+  .nameContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .inputName {
+    width: 49%;
+  }
+
+#email {
+  width: 47%;
+}
+
 }

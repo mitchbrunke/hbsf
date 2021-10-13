@@ -1,3 +1,5 @@
+//imports
+
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import styles from "../styles/Home.module.css";
@@ -5,6 +7,7 @@ import { sanityClient, urlFor } from "../lib/sanity";
 import { useEffect, useState, useRef } from "react";
 
 const Entertainer = ({ entertainment }) => {
+  //setState for slider
   const [pause, setPause] = useState(false);
   const timer = useRef();
   const [sliderRef, slider] = useKeenSlider({
@@ -17,6 +20,8 @@ const Entertainer = ({ entertainment }) => {
       setPause(false);
     },
   });
+
+  //useEffect to control pause and timer
 
   useEffect(() => {
     sliderRef.current.addEventListener("mouseover", () => {

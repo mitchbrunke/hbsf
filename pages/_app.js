@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import * as gtag from "../lib/gtag";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, tickets }) {
   const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -15,6 +15,7 @@ function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
+
   return (
     <Layout>
       <Component {...pageProps} />

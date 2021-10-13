@@ -1,9 +1,13 @@
+//imports
+
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { sanityClient, urlFor } from "../lib/sanity";
 import Image from "next/image";
 import Entertainer from "../components/Entertainer";
+
+//Sanity data groc query - add new ones here, waaayyy neater than doing it inside the fetch
 
 const pageDataQuery = `*[_type == "home"]{
   heading,
@@ -25,12 +29,19 @@ const entertainmentDataQuery = ` *[_type == "entertainment"]{
     image
   } `;
 
-export default function Home({ pageData, details, entertainment }) {
+const ticketDataQuery = `*[_type == "tickets"]{
+  link
+}`;
+
+//make sure sanity data is passed as props
+
+export default function Home({ pageData, details, entertainment, tickets }) {
+  let ticketLink = tickets[0].link;
   return (
     <div className={styles.content}>
-      {console.log(entertainment)}
+      {/* SEO updates here - add to Sanity */}
       <Head>
-        <title>Hervey Bay Seafood Festival 2021</title>
+        <title> Hervey Bay Seafood Festival </title>
         <meta
           name="description"
           content="Enjoy local seafood, regional wines, beers and fabulous music at Seafront Oval
@@ -38,6 +49,9 @@ export default function Home({ pageData, details, entertainment }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      {/* Actual page content  */}
+
       <div className={styles.hero}>
         <h1>{pageData[0].heading}</h1>
 
@@ -50,18 +64,38 @@ export default function Home({ pageData, details, entertainment }) {
             </Link>
           </div>
 
-          {/* <div className={styles.btn} id={styles.two}>
-            <Link href="https://www.eventbrite.com.au/e/hervey-bay-seafood-festival-tickets-157738276431">
+          <div className={styles.btn} id={styles.two}>
+            <Link href={`${ticketLink}`}>
               <a target="_blank">
                 <button> Buy Tickets</button>
               </a>
             </Link>
-          </div> */}
+          </div>
         </div>
       </div>
 
       <div className={styles.info}>
-        <p></p>
+        <div className={styles.i_logo}>
+          <Image
+            src="/hervey-bay-seafood-fesitval-logo.svg"
+            alt="hbsf logo"
+            width={200}
+            height={200}
+            layout="intrinsic"
+            className={styles.i_logo}
+          />
+        </div>
+
+        <div className={styles.i_logo}>
+          <Image
+            src="/hervey-bay-seafood.svg"
+            alt="hbsf logo"
+            width={200}
+            height={200}
+            layout="intrinsic"
+            object-position="50% 50%"
+          />
+        </div>
         <h3>{pageData[0].description[0].children[0].text}</h3>
       </div>
       <hr />
@@ -77,7 +111,7 @@ export default function Home({ pageData, details, entertainment }) {
           ))}
         </div>
 
-        <Link href="https://www.eventbrite.com.au/e/hervey-bay-seafood-festival-tickets-157738276431">
+        <Link href={`${ticketLink}`}>
           <a target="_blank">
             <button>Tickets Details</button>
           </a>
@@ -98,7 +132,11 @@ export default function Home({ pageData, details, entertainment }) {
 
       <div className={styles.vfc}>
         <h1>Keep up to date with Fraser Coast Events</h1>
-        <button>Fraser Coast Events</button>
+        <Link href="https://www.facebook.com/FraserCoastEvents">
+          <a target="_blank">
+            <button>Fraser Coast Events</button>
+          </a>
+        </Link>
       </div>
     </div>
   );
@@ -108,5 +146,6 @@ export async function getStaticProps() {
   const pageData = await sanityClient.fetch(pageDataQuery);
   const details = await sanityClient.fetch(detailsDataQuery);
   const entertainment = await sanityClient.fetch(entertainmentDataQuery);
-  return { props: { pageData, details, entertainment } };
+  const tickets = await sanityClient.fetch(ticketDataQuery);
+  return { props: { pageData, details, entertainment, tickets } };
 }

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
+
   return (
     <div>
       <div className={styles.top}>
@@ -56,13 +57,13 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <div className={styles.btn}>
-            <Link href="https://www.eventbrite.com.au/e/hervey-bay-seafood-festival-tickets-157738276431">
+          {/* <div className={styles.btn}>
+            <Link href="/">
               <a target="_blank">
                 <button>Tickets</button>
               </a>
             </Link>
-          </div>
+          </div> */}
           <div id={styles.teq}>
             <img
               id={styles.teq_logo}
