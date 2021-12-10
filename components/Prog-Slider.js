@@ -79,7 +79,12 @@ const ProgramItem = ({ sanityData, type }) => {
                   <>
                     <Link href={single.link}>
                       <a target="_blank">
-                        <button>More Info</button>
+                        <button
+                          id="{styles.more}"
+                          onClick={() => console.log(single.link)}
+                        >
+                          More Info
+                        </button>
                       </a>
                     </Link>
                   </>

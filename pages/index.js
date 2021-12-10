@@ -36,7 +36,7 @@ const ticketDataQuery = `*[_type == "tickets"]{
 //make sure sanity data is passed as props
 
 export default function Home({ pageData, details, entertainment, tickets }) {
-  let ticketLink = tickets[0].link;
+  //  let ticketLink = tickets[0].link;
   return (
     <div className={styles.content}>
       {/* SEO updates here - add to Sanity */}
@@ -65,7 +65,7 @@ export default function Home({ pageData, details, entertainment, tickets }) {
           </div>
 
           <div className={styles.btn} id={styles.two}>
-            <Link href={`${ticketLink}`}>
+            <Link href={tickets[0].link}>
               <a target="_blank">
                 <button> Buy Tickets</button>
               </a>
@@ -111,7 +111,7 @@ export default function Home({ pageData, details, entertainment, tickets }) {
           ))}
         </div>
 
-        <Link href={`${ticketLink}`}>
+        <Link href={tickets[0].link}>
           <a target="_blank">
             <button>Tickets Details</button>
           </a>

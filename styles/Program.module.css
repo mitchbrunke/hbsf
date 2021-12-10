@@ -34,6 +34,10 @@
   padding: 1rem;
 }
 
+#more {
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 700px) {
   .text {
     border: #ff3b00 5px solid;
